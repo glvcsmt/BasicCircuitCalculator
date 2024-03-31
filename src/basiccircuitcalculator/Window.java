@@ -57,10 +57,10 @@ public class Window extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         I3 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BCC v.01");
-        setPreferredSize(new java.awt.Dimension(530, 435));
 
         Calc.setText("Calculate");
         Calc.addActionListener(new java.awt.event.ActionListener() {
@@ -99,15 +99,15 @@ public class Window extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Ug:");
+        jLabel1.setText("Ug [V]:");
 
-        jLabel2.setText("Ig - I1:");
+        jLabel2.setText("Ig - I1 [A]:");
 
-        jLabel3.setText("R1:");
+        jLabel3.setText("R1 [Ohm]:");
 
-        jLabel4.setText("R2:");
+        jLabel4.setText("R2 [Ohm]:");
 
-        jLabel5.setText("R3:");
+        jLabel5.setText("R3 [Ohm]:");
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setText("Inputs:");
@@ -121,6 +121,7 @@ public class Window extends javax.swing.JFrame {
 
         jLabel10.setText("UIg:");
 
+        UR1.setEditable(false);
         UR1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UR1ActionPerformed(evt);
@@ -129,24 +130,28 @@ public class Window extends javax.swing.JFrame {
 
         jLabel11.setText("I2:");
 
+        UR2.setEditable(false);
         UR2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UR2ActionPerformed(evt);
             }
         });
 
+        UR3.setEditable(false);
         UR3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UR3ActionPerformed(evt);
             }
         });
 
+        I2.setEditable(false);
         I2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 I2ActionPerformed(evt);
             }
         });
 
+        UIg.setEditable(false);
         UIg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UIgActionPerformed(evt);
@@ -157,6 +162,7 @@ public class Window extends javax.swing.JFrame {
 
         jLabel13.setText("I3:");
 
+        I3.setEditable(false);
         I3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 I3ActionPerformed(evt);
@@ -167,68 +173,69 @@ public class Window extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(153, 153, 153));
         jLabel14.setText("By: GMG");
 
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/basiccircuitcalculator/image/circuit.PNG"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel6)
-                        .addGap(125, 125, 125)
-                        .addComponent(jLabel9))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(205, 205, 205)
-                        .addComponent(Calc, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(Ig)
-                    .addComponent(R3)
-                    .addComponent(R2)
-                    .addComponent(R1)
-                    .addComponent(Ug, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel12)
-                    .addComponent(UR2)
-                    .addComponent(UR3)
-                    .addComponent(UR1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel10)
-                    .addComponent(UIg)
-                    .addComponent(I2)
-                    .addComponent(jLabel13)
-                    .addComponent(I3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel5)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel1)
+                        .addComponent(Ig)
+                        .addComponent(R3)
+                        .addComponent(R2)
+                        .addComponent(R1)
+                        .addComponent(Ug, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel12)
+                            .addComponent(UR2)
+                            .addComponent(UR3)
+                            .addComponent(UR1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel10)
+                            .addComponent(UIg)
+                            .addComponent(I2)
+                            .addComponent(jLabel13)
+                            .addComponent(I3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Calc, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55)))
+                .addGap(21, 21, 21))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(103, 103, 103)
+                .addComponent(jLabel15)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(31, 31, 31)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Ug, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(1, 1, 1)
                         .addComponent(jLabel2)
@@ -244,9 +251,11 @@ public class Window extends javax.swing.JFrame {
                         .addComponent(R2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(3, 3, 3)
                         .addComponent(jLabel5)
-                        .addGap(2, 2, 2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(R3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel12)
@@ -256,7 +265,7 @@ public class Window extends javax.swing.JFrame {
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(UIg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(29, 29, 29)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel7)
@@ -266,7 +275,7 @@ public class Window extends javax.swing.JFrame {
                                 .addComponent(jLabel11)
                                 .addGap(2, 2, 2)
                                 .addComponent(I2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(31, 31, 31)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel8)
@@ -275,10 +284,12 @@ public class Window extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel13)
                                 .addGap(2, 2, 2)
-                                .addComponent(I3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(32, 32, 32)
-                .addComponent(Calc)
-                .addGap(24, 24, 24)
+                                .addComponent(I3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Calc)))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addContainerGap())
         );
@@ -321,11 +332,13 @@ public class Window extends javax.swing.JFrame {
         I2.removeAll();
         I3.removeAll();
         
+        float ug, ig, r1, r2, r3;
+        
         try {
             
-            float ug = Float.parseFloat(Ug.getText()), ig = Float.parseFloat(Ig.getText()), 
-                  r1 = Float.parseFloat(R1.getText()), r2 = Float.parseFloat(R2.getText()),
-                  r3 = Float.parseFloat(R3.getText());
+            ug = Float.parseFloat(Ug.getText()); ig = Float.parseFloat(Ig.getText()); 
+            r1 = Float.parseFloat(R1.getText()); r2 = Float.parseFloat(R2.getText());
+            r3 = Float.parseFloat(R3.getText());
             
             float ur1 = ig * r1, 
                   i2 = (ug + r3 * ig)/(r2 + r3),
@@ -334,12 +347,18 @@ public class Window extends javax.swing.JFrame {
                   ur3 = i3 * r3,
                   uig = (-ur1 - ur2);
             
-        UR1.setText("" + ur1);
-        UR2.setText("" + ur2);
-        UR3.setText("" + ur3);
-        UIg.setText("" + uig);
-        I2.setText("" + i2);
-        I3.setText("" + i3);
+        UR1.setText(ur1 + " [V]");
+        UR2.setText(ur2 + " [V]");
+        UR3.setText(ur3 + " [V]");
+        UIg.setText(uig + " [V]");
+        I2.setText(i2 + " [A]");
+        I3.setText(i3 + " [A]");
+        
+        Ug.setText("");
+        Ig.setText("");
+        R1.setText("");
+        R2.setText("");
+        R3.setText("");
             
         } catch (Exception e) {
             JOptionPane.showInternalMessageDialog(rootPane, "Mindenhol számoknak kell szerepelnie!", "Hiba!", JOptionPane.ERROR_MESSAGE);
@@ -424,6 +443,7 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
